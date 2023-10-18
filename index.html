@@ -25,11 +25,30 @@
 
             });
 
+            //This code manipulate the Login on the page and changes it color 
+            // document.addEventListener('DOMContentLoaded', function(){
+            //         //changes to red
+            //     document.querySelector('#red').onclick = function(){
+            //         document.querySelector('#login').style.color = 'red';
+            //     }
+            //         //changes to blue
+            //     document.querySelector('#blue').onclick = function(){
+            //         document.querySelector('#login').style.color = 'blue';
+            //     }
+            //         //changes to green
+            //     document.querySelector('#green').onclick = function(){
+            //         document.querySelector('#login').style.color = 'green';
+            //     }
+            // });
+
+            //This code does the same thing as the top code but its made it simple
             document.addEventListener('DOMContentLoaded', function(){
 
-                document.querySelector('#red').onclick = function(){
-                    document.querySelector('#login').style.color = 'red';
-                }
+                document.querySelectorAll('button').forEach(button, function(){
+                    button.onclick = function(){
+                        document.querySelector('#login').style.color =
+                    }
+                });
             });
         </script>
     </head>
@@ -43,8 +62,8 @@
         </form> <br> <br>
 
 
-        <button id="red">Red</button>
-        <button id="blue">blue</button>
-        <button id="green">green</button>
+        <button data-color=""="red">Red</button>
+        <button data-color="blue">blue</button>
+        <button data-color="green">green</button>
     </body>
 </html>
