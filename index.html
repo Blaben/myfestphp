@@ -46,7 +46,7 @@
 
                 document.querySelectorAll('button').forEach(button, function(){
                     button.onclick = function(){
-                        document.querySelector('#login').style.color =
+                        document.querySelector('#login').style.color = button
                     }
                 });
             });
@@ -62,7 +62,7 @@
         </form> <br> <br>
 
 
-        <button data-color=""="red">Red</button>
+        <button data-color="red">Red</button>
         <button data-color="blue">blue</button>
         <button data-color="green">green</button>
     </body>
