@@ -1,69 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale= 1.0">
-        <meta name="description" content="HTML CSS JAVASCRIPT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale= 1.0" />
+    <meta name="description" content="HTML CSS JAVASCRIPT" />
+    <link rel="icon" type="image/jpg" href="pic.jpg" sizes="32x32" />
 
-        <title>Login Page Welcome message</title>
+    <title>Login Page Welcome message</title>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                document.querySelector('form').onsubmit = function(){
-                    const name = document.querySelector('#uname').value;
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector("form").onsubmit = function () {
+          const name = document.querySelector("#uname").value;
 
-                    //alert(`Welcome ${name}`)
-                    //document.querySelector('h1').innerHTML = `Welcome ${name}`;
+          //alert(`Welcome ${name}`)
+          //document.querySelector('h1').innerHTML = `Welcome ${name}`;
 
-                    if(document.querySelector('h1').innerHTML ==='Login'){
-                        document.querySelector('h1').innerHTML = `Welcome ${name}`;
-                    }
-                    else {
-                        document.querySelector('h1').innerHTML = 'Login';
-                    }
-                };
+          if (document.querySelector("h1").innerHTML === "Login") {
+            document.querySelector("h1").innerText = `Welcome ${name}`;
+          } else {
+            //document.querySelector('h1').innerHTML = 'Login';
+            document.querySelector("h1").innerText = `Welcome ${name}`;
+          }
+        };
+      });
 
-            });
+      //This code manipulate the Login on the page and changes it color
+      // document.addEventListener('DOMContentLoaded', function(){
+      //         //changes to red
+      //     document.querySelector('#red').onclick = function(){
+      //         document.querySelector('#login').style.color = 'red';
+      //     }
+      //         //changes to blue
+      //     document.querySelector('#blue').onclick = function(){
+      //         document.querySelector('#login').style.color = 'blue';
+      //     }
+      //         //changes to green
+      //     document.querySelector('#green').onclick = function(){
+      //         document.querySelector('#login').style.color = 'green';
+      //     }
+      // });
 
-            //This code manipulate the Login on the page and changes it color 
-            // document.addEventListener('DOMContentLoaded', function(){
-            //         //changes to red
-            //     document.querySelector('#red').onclick = function(){
-            //         document.querySelector('#login').style.color = 'red';
-            //     }
-            //         //changes to blue
-            //     document.querySelector('#blue').onclick = function(){
-            //         document.querySelector('#login').style.color = 'blue';
-            //     }
-            //         //changes to green
-            //     document.querySelector('#green').onclick = function(){
-            //         document.querySelector('#login').style.color = 'green';
-            //     }
-            // });
+      //This code does the same thing as the top code but its made it simple
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("button").forEach(button, function () {
+          button.onclick = function () {
+            document.querySelector("#login").style.color = button;
+          };
+        });
+      });
+    </script>
+  </head>
 
-            //This code does the same thing as the top code but its made it simple
-            document.addEventListener('DOMContentLoaded', function(){
+  <body>
+    <h1 id="login">Login</h1>
 
-                document.querySelectorAll('button').forEach(button, function(){
-                    button.onclick = function(){
-                        document.querySelector('#login').style.color = button
-                    }
-                });
-            });
-        </script>
-    </head>
+    <form action="">
+      <input
+        autofocus
+        type="text"
+        name="username"
+        id="uname"
+        placeholder="Enter username"
+      />
+      <input type="submit" value="submit" />
+    </form>
+    <br />
+    <br />
 
-    <body>
-        <h1 id="login">Login</h1>
-
-        <form action="" >
-            <input autofocus type="text" name="username" id="uname" placeholder="Enter username">
-            <input type="submit" value="submit">
-        </form> <br> <br>
-
-
-        <button data-color="red">Red</button>
-        <button data-color="blue">blue</button>
-        <button data-color="green">green</button>
-    </body>
+    <button data-color="red">Red</button>
+    <button data-color="blue">blue</button>
+    <button data-color="green">green</button>
+  </body>
 </html>
